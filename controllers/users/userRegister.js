@@ -17,7 +17,7 @@ export async function userRegister(req, res) {
 			password: req.body.password,
 			phone: req.body.phone,
 			blood: req.body.blood,
-			image: req.file.path?req.file.path:""
+			image: req.file?req.file.path:""
 		}
 		const { error } = validate(userData)
 		if (error) {
