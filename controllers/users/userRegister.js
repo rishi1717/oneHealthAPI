@@ -21,6 +21,7 @@ export async function userRegister(req, res) {
 		}
 		const { error } = validate(userData)
 		if (error) {
+			console.log(error)
 			return res.status(400).send({ message: error.details[0].message })
 		}
 
@@ -47,6 +48,7 @@ export async function userRegister(req, res) {
 		}).save()
 		res.status(201).send({ message: "User created succesfully" })
 	} catch (err) {
+		console.log(err.message)
 		res.status(500).json({ message: err.message })
 	}
 }
