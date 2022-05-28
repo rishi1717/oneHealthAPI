@@ -6,6 +6,7 @@ import dotenv from "dotenv"
 dotenv.config()
 
 export async function userRegister(req, res) {
+	console.log(req.body)
 	try {
 		let userData = {
 			firstName: req.body.firstName,
