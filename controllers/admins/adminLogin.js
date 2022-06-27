@@ -14,6 +14,9 @@ export async function adminLogin(req, res) {
 			if (!admin) {
 				return res.status(401).send({ message: "Invalid email!" })
 			}
+			if (!admin.admin) {
+				return res.status(401).send({ message: "No Admin access!" })
+			}
 		}
 
 		const validPassword = await bcrypt.compare(
