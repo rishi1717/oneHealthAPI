@@ -74,6 +74,7 @@ export async function updateDoctor(req, res) {
 			}
 			else{
 				res.status(201).send({ message: "doctor Updated succesfully" })
+			}
 		} else {
 			res.status(401).json({ message: "not authorized" })
 		}
